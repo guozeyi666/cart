@@ -9,7 +9,7 @@
         <p>{{lists.market_attribute && lists.market_attribute.dealer_price}}</p>
         <p>指导价 {{lists.market_attribute && lists.market_attribute.official_refer_price}}</p>
         <div class="action active flex-row">
-            <button data-hover="hover">{{lists.BottomEntranceTitle}}</button>
+            <button data-hover="hover" @click="xunjia">{{lists.BottomEntranceTitle}}</button>
         </div>
       </div>
         <li class="year">
@@ -64,6 +64,11 @@ export default {
         query:{
           id
         }
+      })
+    },
+    xunjia(){
+      this.$router.push({
+        path:"/xunjia"
       })
     }
   },

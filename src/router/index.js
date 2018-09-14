@@ -4,6 +4,7 @@ const Index = () => import('../components/index')
 const Detail = () => import ('../components/detail')
 const Img = () => import('../components/img')
 const Denglu = () => import("../components/denglu")
+const Xunjia = () => import("../components/xunjia")
 
 Vue.use(Router)
 
@@ -23,6 +24,9 @@ let router = new Router({
     },{
       path:'/img',
       component:Img
+    },{
+      path:'/xunjia',
+      component:Xunjia
     },{
       path:'*',
       redirect:'/index'

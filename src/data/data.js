@@ -38,3 +38,23 @@ export let getImgList = (id, colorId, carId)=>{
   }
   return sendRequest(`https://baojia.chelun.com/v2-car-getImageList.html?${search}`)
 }
+/**
+ * 获取短信验证码
+ * @param phone     用户的手机号
+ * @return promise  返回一个promise
+ */
+export let getCapture = (phone) => {
+  return sendRequest(`http://123.206.55.50:8080/getCapture`, 'POST', { phone });
+}
+/**
+ * 获取城市列表(如果传省份id返回城市列表，如果不传返回省份列表)
+ * @param provinceId   省份id
+ * @return promise 返回一个promise
+ */
+export let getCityList = (provinceId) => {
+  let search = ``;
+  if (provinceId) {
+      search += `provinceid=${provinceId}`;
+  }
+  return sendRequest(`https://baojia.chelun.com/v1-city-alllist.html?${search}`)
+}

@@ -9,6 +9,7 @@
 export default {
   methods: {
     clickBtn () {
+      _hmt.push(['_trackEvent',"信息", 'tap', '按钮点击']);
       let username = this.$refs.username.value,
           password = this.$refs.password.value
       if(username == "Gzy" && password == "Gzy123.."){
